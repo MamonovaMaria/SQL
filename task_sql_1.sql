@@ -46,7 +46,7 @@ SELECT COUNT(*) FROM 'students';
 SELECT COUNT(*) FROM 'students' WHERE 'gender'='female';
 SELECT 'course' FROM 'students' WHERE 'gender'='female';
 
-SELECT COUNT(*) FROM 'students', 'cities' WHERE 'students'.'city_id' = 'cities'.'city_id' and 'city_country'='Germany';
+SELECT COUNT(*) FROM students, cities WHERE students.city_id = cities.city_id and city_country='Germany';
 
 SELECT COUNT(*) FROM 'students' WHERE 'course' < '4';
 
@@ -54,7 +54,7 @@ SELECT COUNT(*) FROM 'students' WHERE 'course' < '4';
 UPDATE 'students' SET 'course' = '3' WHERE 'name' = 'Anna'
 UPDATE 'students' SET 'course' = '2' WHERE 'name' = 'Peter'
 
-DELETE FROM 'student', 'cities' WHERE 'gender' = 'fenale' and 'students'.'city_id' = 'cities'.'city_id' and 'city_country'='Germany';
+DELETE FROM student, cities WHERE gender = 'female' AND students.city_id = cities.city_id and city_country='Germany';
 
 ALTER TABLE 'students' ADD COLUMN 'mastered' BOOL NOT NULL DEFAULT 'false';
 UPDATE 'students', 'cities' SET 'students'.'mastered' = 'true' WHERE 'students'.'city_id' = 'cities'.'city_id' and 'city_country'='Germany';
